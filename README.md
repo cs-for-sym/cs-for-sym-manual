@@ -51,6 +51,14 @@
 | `npm run build`           | 构建生产站点到 `./dist/`                          |
 | `npm run preview`         | 本地预览构建产物                                  |
 
+## GitHub Pages 部署
+
+本仓库已配置 `.github/workflows/astro.yml`，推送至 `main` 分支后会自动构建并部署到 GitHub Pages。
+
+部署地址：`https://cs-for-sym.github.io/cs-for-sym-manual/`
+
+> 如果样式仍无法加载，请检查仓库 Settings → Pages → Build and deployment 是否设置为 **GitHub Actions** 源。
+
 ## 维护说明
 
 - 新增或修改页面：在 `src/content/docs/` 下编辑 `.md` 或 `.mdx` 文件。

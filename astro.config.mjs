@@ -4,11 +4,13 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://cs-for-sym.github.io',
+	base: '/cs-for-sym-manual/',
 	integrations: [
 		starlight({
 			title: 'CS 入门手册',
 			description: '计算机科学与技术专业大一新生认知框架、四年路线图与分层学习指南',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/cs-for-sym/cs-for-sym-manual' }],
 			sidebar: [
 				{ label: '首页', slug: '' },
 				{
