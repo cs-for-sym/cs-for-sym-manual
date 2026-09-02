@@ -1,49 +1,58 @@
-# Starlight Starter Kit: Basics
+# 计算机科学与技术专业入门手册
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-```
-npm create astro@latest -- --template starlight
-```
+本仓库是使用 [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/) 构建的静态文档网站，面向 **计算机科学与技术专业大一新生**（零基础友好），提供：
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- 专业认知框架与学科地图
+- AI 时代背景下的能力保值分析
+- 四年核心课程、实践路线与毕业出路
+- L1–L7 七层学科分层导读
+- 按年级分层的练手项目与公开课推荐
 
-## 🚀 Project Structure
+## 内容来源
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+站点的原始稿件存放于 `doc/` 目录：
+
+- `计算机科学与技术专业入门手册.docx`
+- `计算机科学与技术学科分层导读.docx`
+- `计算机学科地图与方向全景（手册扩展篇）.docx`
+- `分层项目练手.md`
+
+经过结构重组、表达优化后，已迁移到 `src/content/docs/` 下对应的 Astro/Starlight 页面中。
+
+## 项目结构
 
 ```
 .
-├── public/
+├── public/                  # 静态资源
 ├── src/
-│   ├── assets/
+│   ├── assets/              # 站点图片等媒体资源
 │   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
+│   │   └── docs/            # Starlight 文档页面
+│   │       ├── index.mdx              # 首页
+│   │       ├── handbook/              # 入门手册（8 章）
+│   │       ├── layers/                # 学科分层导读（L1–L7）
+│   │       ├── directions/            # 方向全景扩展篇
+│   │       └── projects/              # 分层项目练手
+│   └── content.config.ts    # 内容集合配置
+├── doc/                     # 原始稿件
+├── astro.config.mjs         # 站点与侧边栏配置
 ├── package.json
 └── tsconfig.json
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## 常用命令
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | 安装依赖                                         |
+| `npm run dev`             | 启动本地开发服务器（默认 `localhost:4321`）       |
+| `npm run build`           | 构建生产站点到 `./dist/`                          |
+| `npm run preview`         | 本地预览构建产物                                  |
 
-## 👀 Want to learn more?
+## 维护说明
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- 新增或修改页面：在 `src/content/docs/` 下编辑 `.md` 或 `.mdx` 文件。
+- 调整导航：修改 `astro.config.mjs` 中的 `sidebar`。
+- 提交前请运行 `npm run build`，确保没有构建错误。
